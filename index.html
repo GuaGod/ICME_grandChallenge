@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Grand Challenge on Dynamic Gaussian Splatting Compression">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grand Challenge on Dynamic Gaussian Splatting Compression</title>
+<!-- : Pixel-aligned Expressive humAn mesh Recovery -->
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/compare.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/iclr-navbar-logo.svg"> -->
+  <link rel="icon" href="./static/images/icons2.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script src="./static/js/video-carousel.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+    </div>
+
+  </div>
+</nav> -->
+
+  <!-- <video controls playsinline style="height:500px; width: 11;">
+    <source src="static/videos/new_free_view2.mp4" type="video/mp4" style="height:500px; width: 1200px;" >
+  </video> -->
+
+<!-- <video autoplay controls muted loop playsinline class="fullscreen-video" style="width: 100%; height:1000px; object-fit: contain; background: #000;" > -->
+<div class="top_box">
+<!-- <img src="static/images/background.png" 
+alt="PEAR pipeline image" class="background_img"/> -->
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="color:#ffffff;">
+            <!-- <span class="icon">🍐</span> -->
+            <a href="https://www.kaggle.com/competitions/dy-gs-bench-dynamic-3-dgs-compression-icme-2026-grand-challenge/overview">Grand Challenge on Dynamic Gaussian Splatting Compression</a>
+          </h1>
+
+
+
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a>Anonymous</a></sup></span>
+
+        </div> -->
+        </div>
+</div>
+
+
+<section>
+<div class="my_container">
+    <div class="my_title">Challenge Overview</div>
+    <div class="my_content">Dynamic 3D Gaussian Splatting (DyGS) enables real-time, high-fidelity rendering of dynamic scenes and is increasingly used in AR/VR/XR and volumetric video. However, naively storing a time-varying set of Gaussian primitives leads to prohibitive storage and bandwidth costs. While many compression approaches have been proposed, progress is slowed by the lack of a standardized benchmark that evaluates rate, rendering quality, and online decoding cost under a unified protocol.</div>
+    <div class="my_content">DyGS-Bench focuses on a realistic deployment setting where only the reconstructed native Gaussian sequence is available (no original multi-view training images/videos). The goal of this Grand Challenge is to advance practical codecs that compress dynamic Gaussian assets into a compact bitstream and reconstruct renderable Gaussians efficiently. </div>
+  </div>
+</section>
+
+<section>
+<div class="my_container">
+    <div class="my_title">Important Dates and News</div>
+    <div class="my_content important-dates-news">  <ul>
+    <li class="past">
+      <strong>2026.02.05:</strong> Starter kit + baseline + dataset release
+      (scripts, format checks)
+    </li>
+    <li>
+      <strong>2026.04.01:</strong> Stage 1 Deadline
+    </li>
+    <li>
+      <strong>2026.04.25:</strong> Final submission deadline
+    </li>
+    <li>
+      <strong>2026.05.01:</strong> Results announcement
+    </li>
+  </ul></div>
+</div>
+</section>
+
+<section>
+<div class="my_container">
+    <div class="my_title">Task</div>
+    <div class="my_content">Given a native dynamic Gaussian sequence {G_t} and a fixed camera set C, design an encoder (offline) and decoder (online, measured) that:</div>
+    <div class="my_content important-dates-news">
+      <ul>
+    <li>
+      Produces a compact <strong>bitstream</strong> from {G_t} (offline encoding is not time-constrained).
+    </li>
+    <li>
+      Determine code stream size for coded Gaussian.
+    </li>
+    <li>
+      Achieves high rendering quality when rendering and temporal consistency Ghat_t under C compared with renderings of {G_t}.
+    </li>
+  </ul>
+    </div>  
+  
+  </div>
+</section>
+
+<section>
+<div class="my_container">
+    <div class="my_title">Datasets</div>
+    <div class="my_content">DyGS-Bench focuses on a native Gaussians-only setting: the input is a reconstructed dynamic 3D Gaussian sequence (no original multi-view training RGB/video data). Each sequence includes:</div>
+    <div class="my_content important-dates-news">
+<ul>
+    <li>
+      <strong>Native Gaussian assets:</strong> time-varying Gaussians (per-frame PLY).
+    </li>
+    <li>
+      <strong>Camera set:</strong> calibrated camera parameters for rendering-based evaluation.
+    </li>
+  </ul>
+
+    </div>
+</div>
+</section>
+
+<section>
+<div class="my_container">
+    <div class="my_title">Baseline</div>
+</div>
+</section>
+
+<section>
+  <div class="my_container" style="display: flex;">
+      <div style="flex:1; display: flex;justify-content:flex-start; flex-direction:column; align-items: center;">
+        <div class="pipeline_big_title">LightGaussian for
+Dynamic Gaussian Compression Challenge.</div>
+        <div class="pipeline_small_title" >Overview of the Baseline Framework, LightGaussian, for the
+Dynamic Gaussian Compression Challenge. The provided baseline pipeline
+for participants, incorporating Gaussian pruning, Spherical Harmonics (SH)
+distillation, and Vector Quantization.</div>
+
+      </div>
+
+          <img src="static/images/pipeline.png"
+          alt="PEAR pipeline image"
+          class="teaser-img" style="flex:1">
+    </div>
+  </div>
+</section>
+
+
+<section>
+<div class="my_container">
+    <div class="my_title">Organizers</div>
+    <div class="my_content organizers">
+      <div class="organizer_item">
+        <div class="head_img" style="background-image: url('./static/images/wangchao.jpeg');"></div>
+        <div class="name"><a href="https://hans1984.github.io/">Chao Wang</a></div>
+        <div class="school">Peng Cheng Laboratory</div>
+      </div>
+      <div class="organizer_item">
+        <div class="head_img" style="background-image: url('./static/images/lixiang.jpg');"></div>
+        <div class="name">Xiang Li</div>
+        <div class="school">Peking University</div>
+      </div>
+      <div class="organizer_item">
+        <div class="head_img" style="background-image: url('./static/images/yangjiayu.jpg');"></div>
+        <div class="name">Jiayu Yang</div>
+        <div class="school">Peking University</div>
+      </div>
+      <div class="organizer_item">
+        <div class="head_img" style="background-image: url('./static/images/wujiahao.jpg');"></div>
+        <div class="name"><a href="https://wujh2001.github.io/">Jiahao Wu</a></div>
+        <div class="school">Peking University</div>
+      </div>
+      <div class="organizer_item">
+        <div class="head_img" style="background-image: url('./static/images/liangjie.jpg');background-position: center 23%; background-size: 155%;"></div>
+        <div class="name"><a href="https://guagod.github.io/liangjie.github.io/">Jie Liang</a></div>
+        <div class="school">Peking University</div>
+      </div>
+      <div class="organizer_item">
+        <div class="head_img" style="background-image: url('./static/images/wangronggang.jpg'); background-position: center 23%;"></div>
+        <div class="name"><a href="https://scholar.google.com/citations?user=CEEvb64AAAAJ&hl=zh-CN">Ronggang Wang</a></div>
+        <div class="school">Peking University</div>
+      </div>
+    </div>
+</div>
+</section>
+
+<footer class="footer" style="margin-top: 100px;">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link"  class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            The souce code is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a> , we thank the authors for sharing the templates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
+
+
