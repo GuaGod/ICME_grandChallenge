@@ -19,6 +19,8 @@
     gtag('js', new Date());
 
     gtag('config', 'G-PYVRSFMDRL');
+
+
   </script>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
@@ -44,24 +46,19 @@
 </head>
 <body>
 
-<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="logo"><a href="https://www.kaggle.com/competitions/dy-gs-bench-dynamic-3-dgs-compression-icme-2026-grand-challenge/overview">DGSC Challenge</a></div>
+    <nav class="nav">
+      <a href="#overview">Overview</a>
+      <a href="#dates">Dates</a>
+      <a href="#task">Task</a>
+      <a href="#dataset">Dataset</a>
+      <a href="#baseline">Baseline</a>
+      <a href="#organizers">Organizers</a>
+    </nav>
   </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
-    </div>
-
-  </div>
-</nav> -->
+</header>
 
   <!-- <video controls playsinline style="height:500px; width: 11;">
     <source src="static/videos/new_free_view2.mp4" type="video/mp4" style="height:500px; width: 1200px;" >
@@ -91,7 +88,7 @@ alt="PEAR pipeline image" class="background_img"/> -->
 
 
 <section>
-<div class="my_container">
+<div class="my_container" id="overview">
     <div class="my_title">Challenge Overview</div>
     <div class="my_content">Dynamic 3D Gaussian Splatting (DyGS) enables real-time, high-fidelity rendering of dynamic scenes and is increasingly used in AR/VR/XR and volumetric video. However, naively storing a time-varying set of Gaussian primitives leads to prohibitive storage and bandwidth costs. While many compression approaches have been proposed, progress is slowed by the lack of a standardized benchmark that evaluates rate, rendering quality, and online decoding cost under a unified protocol.</div>
     <div class="my_content">DyGS-Bench focuses on a realistic deployment setting where only the reconstructed native Gaussian sequence is available (no original multi-view training images/videos). The goal of this Grand Challenge is to advance practical codecs that compress dynamic Gaussian assets into a compact bitstream and reconstruct renderable Gaussians efficiently. </div>
@@ -99,7 +96,7 @@ alt="PEAR pipeline image" class="background_img"/> -->
 </section>
 
 <section>
-<div class="my_container">
+<div class="my_container" id="dates">
     <div class="my_title">Important Dates and News</div>
     <div class="my_content important-dates-news">  <ul>
     <li class="past">
@@ -120,7 +117,7 @@ alt="PEAR pipeline image" class="background_img"/> -->
 </section>
 
 <section>
-<div class="my_container">
+<div class="my_container" id="task">
     <div class="my_title">Task</div>
     <div class="my_content">Given a native dynamic Gaussian sequence {G_t} and a fixed camera set C, design an encoder (offline) and decoder (online, measured) that:</div>
     <div class="my_content important-dates-news">
@@ -141,7 +138,7 @@ alt="PEAR pipeline image" class="background_img"/> -->
 </section>
 
 <section>
-<div class="my_container">
+<div class="my_container" id="dataset">
     <div class="my_title">Datasets</div>
     <div class="my_content">DyGS-Bench focuses on a native Gaussians-only setting: the input is a reconstructed dynamic 3D Gaussian sequence (no original multi-view training RGB/video data). Each sequence includes:</div>
     <div class="my_content important-dates-news">
@@ -159,7 +156,7 @@ alt="PEAR pipeline image" class="background_img"/> -->
 </section>
 
 <section>
-<div class="my_container">
+<div class="my_container" id="baseline">
     <div class="my_title">Baseline</div>
 </div>
 </section>
@@ -185,7 +182,7 @@ distillation, and Vector Quantization.</div>
 
 
 <section>
-<div class="my_container">
+<div class="my_container" id="organizers">
     <div class="my_title">Organizers</div>
     <div class="my_content organizers">
       <div class="organizer_item">
@@ -195,7 +192,7 @@ distillation, and Vector Quantization.</div>
       </div>
       <div class="organizer_item">
         <div class="head_img" style="background-image: url('./static/images/lixiang.jpg');"></div>
-        <div class="name">Xiang Li</div>
+        <div class="name"><a href="https://leeciang.github.io/">Xiang Li</a></div>
         <div class="school">Peking University</div>
       </div>
       <div class="organizer_item">
@@ -250,7 +247,18 @@ distillation, and Vector Quantization.</div>
   </div>
 </footer>
 
+<script>
+    const header = document.getElementById('siteHeader');
 
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+</script>
 </body>
 </html>
 
