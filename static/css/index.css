@@ -65,7 +65,7 @@ body {
   object-fit: fill;
   display: block; /* 避免视频作为行内元素下方的间隙 */
   position:relative;
-  background-image: url("../images/background.png");
+  background-image: url("../images/icme_background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
